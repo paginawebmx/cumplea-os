@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación</title>
+    <link rel="stylesheet" href="presentacionaspecto.css">
+</head>
+<body>
+    <div class="contenedor">
+        <p class="subtitulo">OPRIME LA FOTO</p>
+        <img src="imagen.jpeg" alt="Foto especial" class="foto" onclick="revelarMensaje()">
+        <div class="mensaje" id="mensaje">
+            Hay algo que quiero decirte en este día especial
+            <a href="carta.html" class="flecha">→</a>
+        </div>
+    </div>
+
+    <script>
+        function revelarMensaje() {
+            document.getElementById("mensaje").style.opacity = "1";
+        }
+    </script>
+</body>
+</html>

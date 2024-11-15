@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    position: relative;
+    padding: 10px; 
+}
+
+.confeti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: hsl(calc(360 * var(--i)), 70%, 60%);
+    opacity: 0.8;
+    animation: confeti 3s ease-in-out infinite;
+}
+
+@keyframes confeti {
+    0% {
+        transform: translateY(-20px) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(200px) scale(0.8);
+        opacity: 0;
+    }
+}
+
+.confeti:nth-child(1) { left: 20%; top: 15%; --i: 0.2; }
+.confeti:nth-child(2) { left: 30%; top: 40%; --i: 0.5; }
+.confeti:nth-child(3) { left: 40%; top: 10%; --i: 0.7; }
+.confeti:nth-child(4) { left: 50%; top: 60%; --i: 0.3; }
+.confeti:nth-child(5) { left: 70%; top: 20%; --i: 0.9; }
+.confeti:nth-child(6) { left: 80%; top: 50%; --i: 0.6; }
+.confeti:nth-child(7) { left: 90%; top: 30%; --i: 1.0; }
+.confeti:nth-child(8) { left: 15%; top: 70%; --i: 0.4; }
+
+.sobre {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #F5DEB3;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index: 2;
+    transition: width 0.3s ease;
+}
+
+.boton-abrir {
+    width: 60px;
+    height: 60px;
+    background-color: red;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1em;
+    font-family: 'Cursive', sans-serif;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s;
+    text-decoration: none;
+    z-index: 3;
+}
+
+.boton-abrir:hover {
+    transform: scale(1.1);
+    background-color: #ff4d4d;
+}
+
+@media (max-width: 600px) {
+    .sobre {
+        width: 80%;
+        height: 150px;
+    }
+    .boton-abrir {
+        width: 50px;
+        height: 50px;
+        font-size: 0.9em;
+    }
+}
